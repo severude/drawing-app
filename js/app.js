@@ -80,3 +80,21 @@ $canvas.mousedown(function(e) {
 }).mouseleave(function(){
   $canvas.mouseup();
 });
+
+//On mouse events on the canvas
+$canvas.touchstart(function(e) {
+  lastEvent = e;
+  touchmove = true;
+}).touchmove(function(e) {
+  //Draw lines
+  if (touchmove) {
+    context.beginPath();
+    context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
+    context.lineTo(e.offsetX, e.offsetY);
+    context.strokeStyle = color;
+    context.stroke();
+    lastEvent = e;
+  }
+}).touchend(function(){
+  touchmove = false;
+});
