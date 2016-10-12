@@ -1,0 +1,167 @@
+body {
+	background: darkgrey;
+    font-family: sans-serif;
+}
+.title {
+    text-align: center;
+    color: gainsboro;
+    font-size: 2.5em;
+    margin: 0;
+    font-family: 'Lobster', cursive;
+}
+#main {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+}
+canvas {
+	background: #fff;
+	display: block;
+	margin: 50px auto 10px;
+	border-radius: 5px;
+	box-shadow: 0 4px 0 0 #222;
+	cursor: url(../img/cursor.png), crosshair;
+}
+.controls {
+	min-height: 60px;
+	margin: 0 auto;
+	width: 90%;
+	border-radius: 5px;
+	overflow: hidden;
+}
+ul {
+	list-style:none;
+	margin: 0;
+	float: 	left;
+	padding: 10px 0 20px;
+	width: 100%;
+	text-align: center;
+}
+
+ul li, #newColor {
+	display:block;
+	height: 54px;
+	width: 54px;
+	border-radius: 60px;
+	cursor: pointer;
+	border: 0;
+	box-shadow: 0 3px 0 0 #222;
+}
+
+ul li {
+	display: inline-block;
+	margin: 0 5px 10px;
+}
+
+.black {
+    background: #000;
+}
+.red {
+	background: #f00;
+}
+.blue {
+	background: #00f;
+}
+.selected {
+	border: 7px solid #fff;
+	width: 40px;
+	height: 40px;
+}
+button {
+	background: gainsboro;
+	box-shadow: 0 3px 0 0 grey;
+	color: darkgrey;
+	outline: none;
+	cursor: pointer;
+	text-shadow: 0 1px grey;
+	display: block;
+	font-size: 1em;
+	line-height: 2.5em;
+    padding: .25em 1em;
+}
+button:hover {
+    opacity: .75;
+}
+#revealColorSelect {
+	border: none;
+	border-radius: 5px;
+	margin: 10px auto;
+}
+
+/* New Color Palette */
+#colorSelect {
+	background: #fff;
+	border-radius: 5px;
+	margin: 20px auto 0;
+	padding: 10px 0;
+	display:none;
+	width: 100%;
+}
+#newColor {
+	width: 60px;
+	height: 60px;
+	border-radius: 3px;
+	box-shadow: none;
+	float: left;
+	border: none;
+    margin: 10px 5px 20px 5px;
+}
+.sliders p {
+	margin: 8px 0;
+	vertical-align: middle;
+}
+.sliders label {
+	display: inline-block;
+	margin: 0 10px 0 0;
+	width: 35px;
+	font-size: 14px;
+	color: #6D574E;
+}
+.width {
+    text-align: center;
+}
+.width label {
+    color: white;
+}
+.sliders input {
+	position: relative;
+	top: 2px;
+}
+#colorSelect button {
+	border: none;
+	border-radius: 5px;
+	clear: both;
+	margin: 1em auto 0;
+}
+
+@media screen and (min-width: 480px) {
+    .title {
+        font-size: 3em;
+    }
+    .controls {
+        width: 80%;
+    }
+    #newColor {
+        margin: 10px 20px 20px 10px;
+        width: 80px;
+        height: 80px;
+    }
+    #main {
+        width: 75%;
+    }
+}
+@media screen and (min-width: 605px) {
+    #colorSelect {
+        width: 75%;
+    }
+}
+@media screen and (min-width: 768px) {
+    #colorSelect {
+        width: 60%;
+    }
+}
+@media screen and (min-width: 1024px) {
+    #colorSelect {
+        width: 50%;
+    }
+}
