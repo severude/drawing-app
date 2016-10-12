@@ -4,7 +4,7 @@ var color = $(".selected").css("background-color");
 var $canvas = $("canvas");
 var context = $canvas[0].getContext("2d");
 var lastEvent;
-var mouseDown = false;
+var mouseDown, touchMove = false;
 
 var c = $('#respondCanvas');
 var ct = c.get(0).getContext('2d');
@@ -81,13 +81,13 @@ $canvas.mousedown(function(e) {
   $canvas.mouseup();
 });
 
-//On mouse events on the canvas
+//On touch events on the canvas
 $canvas.touchstart(function(e) {
   lastEvent = e;
-  touchmove = true;
+  touchMove = true;
 }).touchmove(function(e) {
   //Draw lines
-  if (touchmove) {
+  if (touchMove) {
     context.beginPath();
     context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
     context.lineTo(e.offsetX, e.offsetY);
@@ -96,5 +96,5 @@ $canvas.touchstart(function(e) {
     lastEvent = e;
   }
 }).touchend(function(){
-  touchmove = false;
+  touchMove = false;
 });
