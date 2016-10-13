@@ -15,15 +15,17 @@
             <p>
                 <label for="width">Width</label>
                 <input id="width" name="width" type="range" min=1 max=16 value=8>
+                <button id="clearCanvas">Clear</button>
             </p>
         </div>
-		<ul>
-			<li class="red selected"></li>
-			<li class="blue"></li>
-			<li class="black"></li>
-		</ul>
-		<button id="revealColorSelect">Use Different Color</button>
-		<div id="colorSelect">
+        <div class="clearfix">
+            <ul>
+                <li class="red selected"></li>
+                <li class="blue"></li>
+                <li class="black"></li>
+            </ul>
+        </div>
+        <div id="colorSelect">
 			<span id="newColor"></span>
 			<div class="sliders">
 				<p>
@@ -39,9 +41,7 @@
 					<input id="blue" name="blue" type="range" min=0 max=255 value=0>
 				</p>
 			</div>
-			<div>
-			<button id="addNewColor">Add to Palette</button>
-			</div>
+            <button id="addNewColor">Add New Color to the Palette</button>
 		</div>
 	</div>
 	<script src="https://code.jquery.com/jquery-1.11.0.min.js" type="text/javascript" charset="utf-8"></script>

@@ -19,8 +19,12 @@ function respondCanvas(){
     //Call a function to redraw other content (texts, images etc)
 }
 //Initial call 
-respondCanvas();
-context.lineWidth = 8;
+function canvasInit() {
+    respondCanvas();
+    changeColor();
+    context.lineWidth = 8;
+}
+canvasInit();
 
 //When clicking on control list items
 $(".controls").on("click", "li", function(){
@@ -61,6 +65,11 @@ $("#addNewColor").click(function() {
   $newColor.click();
 });
 
+$("#clearCanvas").click(function() {
+    context.clearRect(0, 0, $canvas.width, $canvas.height);
+    canvasInit();
+});
+
 //On mouse events on the canvas
 $canvas.mousedown(function(e) {
   lastEvent = e;
@@ -79,22 +88,4 @@ $canvas.mousedown(function(e) {
   mouseDown = false;
 }).mouseleave(function(){
   $canvas.mouseup();
-});
-
-//On touch events on the canvas
-$canvas.touchstart(function(e) {
-  lastEvent = e;
-  touchMove = true;
-}).touchmove(function(e) {
-  //Draw lines
-  if (touchMove) {
-    context.beginPath();
-    context.moveTo(lastEvent.offsetX, lastEvent.offsetY);
-    context.lineTo(e.offsetX, e.offsetY);
-    context.strokeStyle = color;
-    context.stroke();
-    lastEvent = e;
-  }
-}).touchend(function(){
-  touchMove = false;
 });
